@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.9.5 — 2026-11-26
+
+- Tested with WordPress 7.2.
+- Fixed: the settings page no longer uses jQuery's deprecated `.focus()` and `.select()` shortcuts, so it stops logging jQuery Migrate warnings in WordPress 7.2 and is ready for jQuery 4.
+
 ## 2.9.4 — 2026-08-10
 
 - Changed: Removed the "Enable write abilities" settings checkbox for the Abilities API. The reset-config ability (already marked destructive) is now always registered — confirmation happens via the AI client, not a site-wide toggle.

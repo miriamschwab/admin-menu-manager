@@ -3,7 +3,7 @@
  * Plugin Name:       Admin Menu Manager
  * Plugin URI:        https://miriamschwab.me/plugins/admin-menu-manager
  * Description:       Drag-and-drop reordering, hiding, grouping, and nesting of admin sidebar items. Applies to admin users only.
- * Version:           2.9.4
+ * Version:           2.9.5
  * Author:            Miriam Schwab
  * Author URI:        https://miriamschwab.me
  * License:           GPL-2.0-or-later
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WPA_MM_VERSION', '2.9.4' );
+define( 'WPA_MM_VERSION', '2.9.5' );
 
 require_once plugin_dir_path( __FILE__ ) . 'includes/abilities.php';
 
@@ -786,7 +786,7 @@ jQuery(function($) {
 	$(document).on('click', '.btn-edit-group', function() {
 		var $row = $(this).closest('li');
 		$row.find('.mm-group-display').hide();
-		$row.find('.mm-group-title-input').show().focus().select();
+		$row.find('.mm-group-title-input').show().trigger('focus').trigger('select');
 		$(this).hide();
 		$row.find('.btn-confirm-rename').show();
 	});
@@ -832,7 +832,7 @@ jQuery(function($) {
 		var gid = 'g' + Date.now();
 		$('#mm-list').append(buildGroupRow(gid, title));
 		addGroupToSelects(gid, title);
-		$('#new-group-title').val('').focus();
+		$('#new-group-title').val('').trigger('focus');
 	});
 
 	function buildGroupRow(gid, title) {

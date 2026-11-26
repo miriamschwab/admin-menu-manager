@@ -55,10 +55,8 @@ This plugin exposes abilities for the [WordPress Abilities API](https://develope
 | Ability | Access | Description |
 |---|---|---|
 | `admin-menu-manager/get-config` | Always on | Returns the full saved menu configuration: item order, hidden flags, custom groups, and parent assignments |
-| `admin-menu-manager/reset-config` | Write (opt-in) | Resets the admin sidebar to WordPress defaults by deleting all saved configuration |
+| `admin-menu-manager/reset-config` | Write (destructive) | Resets the admin sidebar to WordPress defaults by deleting all saved configuration |
 
-### Enabling write abilities
+### About reset-config
 
-Write abilities are disabled by default. To enable them, go to **Settings > Admin Menu Manager** and check **Enable write abilities** under the Abilities API section.
-
-> **Note:** `reset-config` is destructive and cannot be undone. Only enable write abilities if you trust the AI agent that has access to your site.
+Both abilities are always registered (there is no settings checkbox since 2.9.4). `reset-config` is marked destructive, so MCP clients ask for confirmation before running it. It cannot be undone, so only connect AI agents you trust to your site.

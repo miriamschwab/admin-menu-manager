@@ -2,9 +2,9 @@
 Contributors: miriamschwab
 Tags: admin menu, sidebar, menu reorder, admin ui, drag and drop
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 7.2
 Requires PHP: 7.4
-Stable tag: 2.9.4
+Stable tag: 2.9.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,7 @@ Admin Menu Manager lets you reorganize the WordPress admin sidebar to match the 
 * Nest a plugin's top-level menu under another item
 * All changes apply only to admin users
 * One-click reset to restore WordPress defaults
+* Abilities API support (WordPress 6.9+): AI agents can read the menu configuration and reset it to defaults through the MCP Adapter
 
 **Notes**
 
@@ -48,6 +49,10 @@ No. Changes apply only to administrators (users with `manage_options` capability
 Use the **Reset to WordPress Defaults** button at the bottom of the settings page. This clears all saved configuration.
 
 == Changelog ==
+
+= 2.9.5 - 2026-11-26 =
+* Tested with WordPress 7.2.
+* Fixed: the settings page no longer uses jQuery's deprecated .focus() and .select() shortcuts, so it stops logging jQuery Migrate warnings in WordPress 7.2 and is ready for jQuery 4.
 
 = 2.9.4 - 2026-08-10 =
 * Changed: Removed the "Enable write abilities" settings checkbox for the Abilities API. The reset-config ability (already marked destructive) is now always registered — confirmation happens via the AI client, not a site-wide toggle.
